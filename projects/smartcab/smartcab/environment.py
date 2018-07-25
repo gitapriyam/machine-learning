@@ -228,14 +228,16 @@ class Environment(object):
         state = self.agent_states[agent]
         location = state['location']
         heading = state['heading']
-        light = 'green' if (self.intersections[location].state and heading[1] != 0) or ((not self.intersections[location].state) and heading[0] != 0) else 'red'
+        light = 'green' if (self.intersections[location].state and heading[1] != 0) \
+        or ((not self.intersections[location].state) and heading[0] != 0) else 'red'
 
         # Populate oncoming, left, right
         oncoming = None
         left = None
         right = None
         for other_agent, other_state in self.agent_states.iteritems():
-            if agent == other_agent or location != other_state['location'] or (heading[0] == other_state['heading'][0] and heading[1] == other_state['heading'][1]):
+            if agent == other_agent or location != other_state['location'] or \
+                (heading[0] == other_state['heading'][0] and heading[1] == other_state['heading'][1]):
                 continue
             # For dummy agents, ignore the primary agent
             # This is because the primary agent is not required to follow the waypoint
@@ -269,7 +271,8 @@ class Environment(object):
         state = self.agent_states[agent]
         location = state['location']
         heading = state['heading']
-        light = 'green' if (self.intersections[location].state and heading[1] != 0) or ((not self.intersections[location].state) and heading[0] != 0) else 'red'
+        light = 'green' if (self.intersections[location].state and heading[1] != 0) \
+        or ((not self.intersections[location].state) and heading[0] != 0) else 'red'
         inputs = self.sense(agent)
 
         # Assess whether the agent can move based on the action chosen.
