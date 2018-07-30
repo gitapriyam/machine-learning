@@ -46,11 +46,11 @@ class LearningAgent(Agent):
             self.alpha = 0.0
         else:
             self.t += 1.0
-            self.epsilon = self.epsilon - 0.05
+            # self.epsilon = self.epsilon - 0.05
             # self.epsilon = math.pow(self.alpha, self.t)
             # self.epsilon = math.fabs(math.cos(self.alpha*self.t))
             # self.epsilon = 1.0/(self.t**2)
-            # self.epsilon = self.epsilon * 0.97
+            self.epsilon = self.epsilon * 0.99
             # self.epsilon = math.pow(self.alpha, self.t)
 
         return None
@@ -128,9 +128,6 @@ class LearningAgent(Agent):
                 # learning but deliberate choice
                 maxQ = self.get_maxQ(state)
                 valid_actions = [item[0] for item in self.Q[state].items() if (item[1] == maxQ)]
-                # for act in self.Q[state]:
-                #     if maxQ == self.Q[state][act]:
-                #         valid_actions.append(act)
                 action = random.choice(valid_actions)
         else:
             # Not learning so random choice
@@ -185,7 +182,7 @@ def run():
     #    * epsilon - continuous value for the exploration factor, default is 1
     #    * alpha   - continuous value for the learning rate, default is 0.5
     agent = env.create_agent(
-        LearningAgent, learning=True, epsilon=1.0, alpha=0.9)
+        LearningAgent, learning=True, epsilon=1.0, alpha=0.8)
 
     ##############
     # Follow the driving agent
@@ -208,7 +205,7 @@ def run():
     # Flags:
     #   tolerance  - epsilon tolerance before beginning testing, default is 0.05
     #   n_test     - discrete number of testing trials to perform, default is 0
-    sim.run(n_test=40, tolerance=0.025)
+    sim.run(n_test=10, tolerance=0.025)
 
 
 if __name__ == '__main__':
