@@ -57,7 +57,7 @@ def survival_stats(data, outcomes, key, filters = []):
     Print out selected statistics regarding survival, given a feature of
     interest and any number of filters (including no filters)
     """
-    
+    from IPython.core.debugger import Tracer; Tracer()() 
     # Check that the key exists
     if key not in data.columns.values :
         print("'{}' is not a feature of the Titanic data. Did you spell something wrong?".format(key))
