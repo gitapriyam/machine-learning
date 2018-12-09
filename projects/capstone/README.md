@@ -4,8 +4,8 @@
 
 **Note**
 
-The Capstone is a two-staged project. The first is the proposal component, where you can receive valuable feedback about your project idea, design, and proposed solution. This must be completed prior to your implementation and submitting for the capstone project. 
-
-You can find the [capstone proposal rubric here](https://review.udacity.com/#!/rubrics/410/view), and the [capstone project rubric here](https://review.udacity.com/#!/rubrics/108/view). Please ensure that you are following directions correctly before submitting these two stages which encapsulate your capstone.
-
-Please email [machine-support@udacity.com](mailto:machine-support@udacity.com) if you have any questions.
+1) I am enclosing the proposal.pdf document detailing capstone project proposal.
+Since the dataset used in the proposal is very large, it cannot be included in the proposal submission zip file. 
+2) This dataset is available for download at https://www.kaggle.com/donorschoose/io
+I plan to use only Projects.csv data file. In this dataset all the projects will be identified with their related projects.
+3) The result will be included in the dataset as an additional column "Related Projects"
